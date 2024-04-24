@@ -42,6 +42,7 @@ async function capture(url, filename, options) {
 	const baseurl = "https://metatags.io/?url=";
 	url = baseurl + encodeURIComponent(url);
 
+	// https://github.com/sindresorhus/capture-website/issues/96
 	await captureWebsite.base64(url, {
 		launchOptions: {
 			args: chromium.args,
@@ -50,8 +51,6 @@ async function capture(url, filename, options) {
 			headless: chromium.headless
 		}
 	})
-
-
 
 	await captureWebsite.file(url, filename, options);
 	console.log('Screenshot captured:', filename);
