@@ -16,7 +16,12 @@ const element = '.card-seo-facebook';
 // };
 
 const options = {
-	element: element, inputType: "url", overwrite: true, scaleFactor: 2, quality: 0.5, waitForElement: element, type: "jpeg"
+	element: element, inputType: "url", overwrite: true, scaleFactor: 2, quality: 0.5, waitForElement: element, type: "jpeg", launchOptions: {
+		args: [
+			'--no-sandbox',
+			'--disable-setuid-sandbox'
+		]
+	}
 };
 
 
@@ -48,7 +53,7 @@ async function capture(url, filename, options) {
 			args: chromium.args,
 			defaultViewport: chromium.defaultViewport,
 			executablePath: await chromium.executablePath,
-			headless: true
+			headless: "new"
 		}
 	})
 
