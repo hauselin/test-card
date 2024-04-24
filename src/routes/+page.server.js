@@ -53,7 +53,7 @@ async function capture(url, filename, options) {
 			args: chromium.args,
 			defaultViewport: chromium.defaultViewport,
 			executablePath: await chromium.executablePath,
-			headless: "new"
+			headless: true
 		}
 	})
 
