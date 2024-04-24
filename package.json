@@ -27,8 +27,10 @@
 	"dependencies": {
 		"archiver": "^7.0.1",
 		"capture-website": "^4.1.0",
+		"chrome-aws-lambda": "^10.1.0",
 		"filenamify": "^6.0.0",
 		"pageres": "^8.0.0",
-		"puppeteer": "^22.7.0"
+		"puppeteer": "^22.7.0",
+		"puppeteer-core": "^22.7.0"
 	}
 }

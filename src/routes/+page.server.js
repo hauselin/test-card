@@ -1,9 +1,11 @@
 import captureWebsite from 'capture-website';
 import filenamify from 'filenamify';
+import chromium from "chrome-aws-lambda"
 
 // https://medium.com/@ankitkumar_62699/how-to-convert-the-json-object-json-file-to-a-csv-file-with-the-help-of-nodejs-5bd01a1cee50
 import fs from 'fs';
 import archiver from 'archiver';
+
 
 
 // https://github.com/sindresorhus/capture-website?tab=readme-ov-file
@@ -35,9 +37,22 @@ function arrayToCSV(data) {
 
 
 async function capture(url, filename, options) {
+
 	console.log('Capturing screenshot:', url);
 	const baseurl = "https://metatags.io/?url=";
 	url = baseurl + encodeURIComponent(url);
+
+	await captureWebsite.base64(url, {
+		launchOptions: {
+			args: chromium.args,
+			defaultViewport: chromium.defaultViewport,
+			executablePath: await chromium.executablePath,
+			headless: chromium.headless
+		}
+	})
+
+
+
 	await captureWebsite.file(url, filename, options);
 	console.log('Screenshot captured:', filename);
 }
