@@ -30,7 +30,8 @@
 		"capture-website": "^4.1.0",
 		"filenamify": "^6.0.0",
 		"pageres": "^8.0.0",
-		"@sparticuz/chromium": "^119.0.2",
-		"puppeteer-core": "^21.5.1"
+		"@sparticuz/chromium": "^123.0.0",
+		"puppeteer": "^22.6.2",
+		"puppeteer-core": "^22.6.2"
 	}
 }
