@@ -53,7 +53,10 @@ async function capture(url, filename, options) {
 			args: chromium.args,
 			defaultViewport: chromium.defaultViewport,
 			executablePath: await chromium.executablePath,
-			headless: "new"
+			// executablePath: await chromium.executablePath(
+			// 	`https://github.com/Sparticuz/chromium/releases/download/v116.0.0/chromium-v116.0.0-pack.tar`
+			// ),
+			headless: true
 		}
 	})
 
@@ -65,7 +68,7 @@ let tempURL;
 let filename;
 let hostname;
 let u;
-let csvfile = "./cards/_output.csv";
+let csvfile = "./tmp/_output.csv";
 
 for (let i = 0; i < urls.length; i++) {
 
@@ -86,7 +89,7 @@ for (let i = 0; i < urls.length; i++) {
 	filename = hostname + "-" + filename + "." + file_extension;
 	output.push({ url: urls[i], filename: filename });
 
-	filename = "./cards/" + filename;
+	filename = "./tmp/" + filename;
 
 	capture(urls[i], filename, options);
 
@@ -118,7 +121,7 @@ function zipDirectory(sourceDir, outPath) {
 }
 
 // Example usage
-zipDirectory('cards', './src/routes/cards.zip').then(() => {
+zipDirectory('./tmp', './tmp/cards.zip').then(() => {
 	console.log('Directory successfully zipped!');
 }).catch(err => {
 	console.error('An error occurred:', err);

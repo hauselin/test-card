@@ -6,7 +6,7 @@
 	// https://svelte.dev/repl/f7e3221f257d42d7830f15287757ca1a?version=3.58.0
 	function download() {
 		const downloadLink = document.createElement('a');
-		downloadLink.href = './src/routes/cards.zip';
+		downloadLink.href = './tmp/cards.zip';
 		downloadLink.download = 'cards.zip';
 		downloadLink.click();
 	}
