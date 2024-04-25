@@ -1,6 +1,7 @@
 import captureWebsite from 'capture-website';
 import filenamify from 'filenamify';
-import chromium from "chrome-aws-lambda"
+//import chromium from "chrome-aws-lambda"
+import chromium from "@sparticuz/chromium"
 
 // https://medium.com/@ankitkumar_62699/how-to-convert-the-json-object-json-file-to-a-csv-file-with-the-help-of-nodejs-5bd01a1cee50
 import fs from 'fs';
