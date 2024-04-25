@@ -3,18 +3,18 @@ import { defineConfig, searchForWorkspaceRoot } from 'vite'
 
 export default defineConfig({
 	plugins: [sveltekit()],
-	// server: {
-	// 	fs: {
-	// 		allow: [
-	// 			// search up for workspace root
-	// 			// searchForWorkspaceRoot(process.cwd()),
-	// 			// your custom rules
-	// 			'./tmp/',
-	// 			'./tmp',
-	// 			'/tmp',
-	// 			'/tmp/cards.zip',
-	// 		],
-	// 	},
-	// },
+	server: {
+		fs: {
+			allow: [
+				// search up for workspace root
+				// searchForWorkspaceRoot(process.cwd()),
+				// your custom rules
+				'./tmp/',
+				'./tmp',
+				'/tmp',
+				'/tmp/cards.zip',
+			],
+		},
+	},
 });
 
