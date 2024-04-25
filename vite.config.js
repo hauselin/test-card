@@ -9,6 +9,8 @@ export default defineConfig({
 				// search up for workspace root
 				// searchForWorkspaceRoot(process.cwd()),
 				// your custom rules
+				'./tmp/',
+				'./tmp',
 				'/tmp',
 				'/tmp/cards.zip',
 			],
