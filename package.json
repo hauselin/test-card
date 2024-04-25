@@ -28,9 +28,9 @@
 	"dependencies": {
 		"archiver": "^7.0.1",
 		"capture-website": "^4.1.0",
-		"chrome-aws-lambda": "^6.0.0",
+		"@sparticuz/chromium-min": "121.0.0",
 		"filenamify": "^6.0.0",
 		"pageres": "^8.0.0",
-		"puppeteer-core": "^6.0.0"
+		"puppeteer-core": "^21.9.0"
 	}
 }

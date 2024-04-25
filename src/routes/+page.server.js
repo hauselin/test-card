@@ -1,7 +1,7 @@
 import captureWebsite from 'capture-website';
 import filenamify from 'filenamify';
-import chromium from "chrome-aws-lambda"
-// import chromium from "@sparticuz/chromium"
+// import chromium from "chrome-aws-lambda"
+import chromium from "@sparticuz/chromium-min"
 
 // https://medium.com/@ankitkumar_62699/how-to-convert-the-json-object-json-file-to-a-csv-file-with-the-help-of-nodejs-5bd01a1cee50
 import fs from 'fs';
@@ -53,10 +53,10 @@ async function capture(url, filename, options) {
 		launchOptions: {
 			args: chromium.args,
 			defaultViewport: chromium.defaultViewport,
-			executablePath: await chromium.executablePath,
-			// executablePath: await chromium.executablePath(
-			// 	`https://github.com/Sparticuz/chromium/releases/download/v116.0.0/chromium-v116.0.0-pack.tar`
-			// ),
+			// executablePath: await chromium.executablePath,
+			executablePath: await chromium.executablePath(
+				"https://github.com/Sparticuz/chromium/releases/download/v121.0.0/chromium-v121.0.0-pack.tar"
+			),
 			headless: true
 		}
 	})
